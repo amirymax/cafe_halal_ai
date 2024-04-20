@@ -1667,3 +1667,22 @@
   cursor: pointer;
 }
 
+.close-button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-style: none;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.order-button {
+  background-color: #0ab31b;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-style: none;
+  border-radius: 10px;
+  margin: 10px;
+}
