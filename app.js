@@ -48,16 +48,6 @@ function decreaseCount() {
 }
 
 
-// Поиск кнопок и добавление обработчиков событий
-// document.addEventListener('DOMContentLoaded', function() {
-//     let increaseButton = document.querySelector('.allergen-info-column');
-//     increaseButton.addEventListener('click', decreaseCount);
-
-//     let decreaseButton = document.querySelector('.vegetarian-details');
-//     decreaseButton.addEventListener('click',increaseCount);
-// });
-
-
 // Функция для открытия модального окна корзины
 function openCartModal() {
     let modal = document.getElementById('cartModal');
