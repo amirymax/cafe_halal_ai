@@ -52,10 +52,45 @@ function decreaseCount() {
 }
 
 // Поиск кнопок и добавление обработчиков событий
-document.addEventListener('DOMContentLoaded', function() {
-    let increaseButton = document.querySelector('.allergen-info-column');
-    increaseButton.addEventListener('click', decreaseCount);
+// document.addEventListener('DOMContentLoaded', function() {
+//     let increaseButton = document.querySelector('.allergen-info-column');
+//     increaseButton.addEventListener('click', decreaseCount);
 
-    let decreaseButton = document.querySelector('.vegetarian-details');
-    decreaseButton.addEventListener('click',increaseCount);
-});
+//     let decreaseButton = document.querySelector('.vegetarian-details');
+//     decreaseButton.addEventListener('click',increaseCount);
+// });
+
+
+// Функция для открытия модального окна корзины
+function openCartModal() {
+    let modal = document.getElementById('cartModal');
+    let modalContent = document.getElementById('cartItems');
+    modal.style.display = 'block';
+  
+    // Очистка содержимого модального окна перед открытием
+    modalContent.innerHTML = '';
+  
+    // Добавление элементов корзины в модальное окно
+    for (let item in cart) {
+      if (cart.hasOwnProperty(item)) {
+        let cartItem = document.createElement('div');
+        cartItem.textContent = item + ': ' + cart[item];
+        modalContent.appendChild(cartItem);
+      }
+    }
+  }
+  
+  // Функция для закрытия модального окна
+  function closeModal() {
+    let modal = document.getElementById('cartModal');
+    modal.style.display = 'none';
+  }
+  
+  // Закрытие модального окна при клике за его пределами
+  window.onclick = function(event) {
+    let modal = document.getElementById('cartModal');
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+  

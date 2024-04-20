@@ -13,6 +13,7 @@
     <script src="app.js"></script>
   </head>
   <body>
+    
     <div class="background-image"></div>
     <div class="iphone-8-plus-1">
       <header class="page-header">
@@ -49,7 +50,7 @@
                     <div class="nav-item-separator">Напитки</div>
                   </div>
                   <div class="navigation-item">
-                    <div class="nav-item-separator" onclick="cart()">
+                    <div class="nav-item-separator" onclick="openCartModal()">
                       Корзина
                     </div>
                   </div>
@@ -80,7 +81,7 @@
                         </button>
                       </div>
                       <div class="allergen-info-column">
-                        <div class="allergen-details">
+                        <div class="allergen-details" onclick="decreaseCount()">
                           <div class="allergen-indicators"></div>
                           <h1 class="allergen-info-details">-</h1>
                         </div>
@@ -89,7 +90,7 @@
                         <div class="spicy-indicators">0</div>
                       </div>
                       <div class="vegetarian-info-column">
-                        <div class="vegetarian-details">
+                        <div class="vegetarian-details" onclick="increaseCount()">
                           <div class="vegetarian-indicator"></div>
                           <div class="non-vegetarian-indicator">+</div>
                         </div>
@@ -119,7 +120,7 @@
                         </button>
                       </div>
                       <div class="allergen-info-column">
-                        <div class="allergen-details">
+                        <div class="allergen-details" onclick="decreaseCount()">
                           <div class="allergen-indicators"></div>
                           <h1 class="allergen-info-details">-</h1>
                         </div>
@@ -128,7 +129,7 @@
                         <div class="spicy-indicators">0</div>
                       </div>
                       <div class="vegetarian-info-column">
-                        <div class="vegetarian-details">
+                        <div class="vegetarian-details" onclick="increaseCount()">
                           <div class="vegetarian-indicator"></div>
                           <div class="non-vegetarian-indicator">+</div>
                         </div>
@@ -138,162 +139,13 @@
                 </div>
               </div>
               
-              <div class="div12">
-                <div class="item"></div>
-                <img
-                  class="inner"
-                  loading="lazy"
-                  alt=""
-                  src="pics/shashlyk.png"
-                />
-
-                <div class="frame-div">
-                  <div class="parent">
-                    <div class="div13">Шашлык Говядина</div>
-                    <div class="additional-info-column">
-                      <div class="additional-info-details">
-                        <button class="dish-details">
-                          <div class="dish-details-child"></div>
-                          <div class="div14">350₽</div>
-                        </button>
-                      </div>
-                      <div class="allergen-info-column">
-                        <div class="allergen-details">
-                          <div class="allergen-indicators"></div>
-                          <h1 class="allergen-info-details">-</h1>
-                        </div>
-                      </div>
-                      <div class="spicy-info-column">
-                        <div class="spicy-indicators">0</div>
-                      </div>
-                      <div class="vegetarian-info-column">
-                        <div class="vegetarian-details">
-                          <div class="vegetarian-indicator"></div>
-                          <div class="non-vegetarian-indicator">+</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div id="cartModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <h2>Корзина</h2>
+                  <div id="cartItems"></div>
                 </div>
               </div>
-              
-              <div class="div12">
-                <div class="item"></div>
-                <img
-                  class="inner"
-                  loading="lazy"
-                  alt=""
-                  src="pics/shashlyk.png"
-                />
-
-                <div class="frame-div">
-                  <div class="parent">
-                    <div class="div13">Шашлык Говядина</div>
-                    <div class="additional-info-column">
-                      <div class="additional-info-details">
-                        <button class="dish-details">
-                          <div class="dish-details-child"></div>
-                          <div class="div14">350₽</div>
-                        </button>
-                      </div>
-                      <div class="allergen-info-column">
-                        <div class="allergen-details">
-                          <div class="allergen-indicators"></div>
-                          <h1 class="allergen-info-details">-</h1>
-                        </div>
-                      </div>
-                      <div class="spicy-info-column">
-                        <div class="spicy-indicators">0</div>
-                      </div>
-                      <div class="vegetarian-info-column">
-                        <div class="vegetarian-details">
-                          <div class="vegetarian-indicator"></div>
-                          <div class="non-vegetarian-indicator">+</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="div12">
-                <div class="item"></div>
-                <img
-                  class="inner"
-                  loading="lazy"
-                  alt=""
-                  src="pics/shashlyk.png"
-                />
-
-                <div class="frame-div">
-                  <div class="parent">
-                    <div class="div13">Шашлык Говядина</div>
-                    <div class="additional-info-column">
-                      <div class="additional-info-details">
-                        <button class="dish-details">
-                          <div class="dish-details-child"></div>
-                          <div class="div14">350₽</div>
-                        </button>
-                      </div>
-                      <div class="allergen-info-column">
-                        <div class="allergen-details">
-                          <div class="allergen-indicators"></div>
-                          <h1 class="allergen-info-details">-</h1>
-                        </div>
-                      </div>
-                      <div class="spicy-info-column">
-                        <div class="spicy-indicators">0</div>
-                      </div>
-                      <div class="vegetarian-info-column">
-                        <div class="vegetarian-details">
-                          <div class="vegetarian-indicator"></div>
-                          <div class="non-vegetarian-indicator">+</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="div12">
-                <div class="item"></div>
-                <img
-                  class="inner"
-                  loading="lazy"
-                  alt=""
-                  src="pics/shashlyk.png"
-                />
-
-                <div class="frame-div">
-                  <div class="parent">
-                    <div class="div13">Шашлык Говядина</div>
-                    <div class="additional-info-column">
-                      <div class="additional-info-details">
-                        <button class="dish-details">
-                          <div class="dish-details-child"></div>
-                          <div class="div14">350₽</div>
-                        </button>
-                      </div>
-                      <div class="allergen-info-column">
-                        <div class="allergen-details">
-                          <div class="allergen-indicators"></div>
-                          <h1 class="allergen-info-details">-</h1>
-                        </div>
-                      </div>
-                      <div class="spicy-info-column">
-                        <div class="spicy-indicators">0</div>
-                      </div>
-                      <div class="vegetarian-info-column">
-                        <div class="vegetarian-details">
-                          <div class="vegetarian-indicator"></div>
-                          <div class="non-vegetarian-indicator">+</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
             </div>
           </div>
         </section>
