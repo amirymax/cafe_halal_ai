@@ -394,12 +394,7 @@
   flex-direction: row;
   z-index: 1;
 }
-.dish-details:hover,
-.dish-image:hover,
-.rectangle-group:hover,
-.rectangle-parent:hover {
-  background-color: var(--color-silver-200);
-}
+
 .image-container {
   flex: 1;
   flex-direction: column;
@@ -531,22 +526,22 @@
   display: none;
   max-width: 100%;
 }
-.div13,
-.inner {
+.name,
+.food-pic {
   position: relative;
   z-index: 1;
 }
-.inner {
+.food-pic {
   height: 95px;
   width: 126px;
   border-radius: var(--br-3xs);
   object-fit: cover;
 }
-.div13 {
+.name {
   align-self: stretch;
   font-weight: 800;
 }
-.dish-details-child {
+.price-background {
   height: 38px;
   width: 86px;
   position: relative;
@@ -554,7 +549,7 @@
   background-color: var(--color-gainsboro);
   display: none;
 }
-.div14 {
+.price-number {
   height: 29px;
   flex: 1;
   position: relative;
@@ -570,12 +565,12 @@
   z-index: 2;
 }
 .additional-info-details,
-.dish-details {
+.price {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.dish-details {
+.price {
   cursor: pointer;
   border: 0;
   padding: var(--padding-9xs) var(--padding-4xs) var(--padding-8xs);
@@ -590,7 +585,7 @@
   flex-direction: column;
   padding: 0 var(--padding-4xs) 0 0;
 }
-.allergen-indicators {
+.decrease-backgrond {
   position: absolute;
   top: 0;
   left: 0;
@@ -600,7 +595,7 @@
   height: 100%;
   z-index: 1;
 }
-.allergen-info-details {
+.decrease-sign {
   margin: 0;
   position: absolute;
   top: 7px;
@@ -616,12 +611,12 @@
   min-width: 17px;
   z-index: 2;
 }
-.allergen-details {
+.decrease {
   align-self: stretch;
   height: 26px;
   position: relative;
 }
-.allergen-info-column {
+.decrease-part {
   width: 26px;
   display: flex;
   flex-direction: column;
@@ -630,13 +625,13 @@
   padding: var(--padding-10xs) 0 0;
   box-sizing: border-box;
 }
-.spicy-indicators {
+.count {
   align-self: stretch;
   position: relative;
   font-weight: 800;
   z-index: 1;
 }
-.spicy-info-column {
+.count-part {
   width: 29px;
   display: flex;
   flex-direction: column;
@@ -647,7 +642,7 @@
   font-size: var(--font-size-lg);
   color: var(--color-black);
 }
-.vegetarian-indicator {
+.increase-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -657,7 +652,7 @@
   height: 100%;
   z-index: 1;
 }
-.non-vegetarian-indicator {
+.increase-sign {
   position: absolute;
   top: 7px;
   left: 4px;
@@ -670,18 +665,18 @@
   min-width: 17px;
   z-index: 2;
 }
-.vegetarian-details {
+.increase {
   align-self: stretch;
   height: 26px;
   position: relative;
 }
 .additional-info-column,
-.vegetarian-info-column {
+.increase-part {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.vegetarian-info-column {
+.increase-part {
   width: 26px;
   flex-direction: column;
   padding: var(--padding-9xs) 0 0;
@@ -714,14 +709,14 @@
   padding: 0 0 var(--padding-8xs);
   box-sizing: border-box;
 }
-.div12,
+.food-card,
 .rectangle-div {
   background-color: var(--color-whitesmoke);
   border-top: 1px solid var(--color-silver-100);
   box-sizing: border-box;
   max-width: 100%;
 }
-.div12 {
+.food-card {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -1590,7 +1585,7 @@
   padding: 0 23px 0 var(--padding-11xl);
   margin-top: -1px;
 }
-.iphone-8-plus-1 {
+.everything {
   width: 100%;
   position: relative;
   display: flex;
@@ -1603,7 +1598,7 @@
   letter-spacing: normal;
 }
 @media screen and (max-width: 380px) {
-  .div12,
+  .food-card,
   .div15,
   .div28 {
     flex-wrap: wrap;
@@ -1671,3 +1666,4 @@
   text-decoration: none;
   cursor: pointer;
 }
+

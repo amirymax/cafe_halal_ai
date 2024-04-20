@@ -1,55 +1,52 @@
 // Глобальный словарь для хранения товаров в корзине
-let cart = {};
+// Глобальный словарь для хранения продуктов в корзине
+let CART = {};
 
 // Функция для увеличения количества продукта
 function increaseCount() {
-    // Получаем текущее количество из поля count
-    let countElement = document.querySelector('.spicy-indicators');
+    const foodCard = event.target.closest('.food-card');
+    if (!foodCard) return;
+
+    const name = foodCard.querySelector('.name').textContent.trim();
+    const countElement = foodCard.querySelector('.count');
     let count = parseInt(countElement.textContent);
 
-    // Увеличиваем количество на 1
-    count += 1;
+    count++;
+
     countElement.textContent = count;
 
-    // Получаем название продукта
-    let productName = document.querySelector('.div13').textContent.trim();
-
-    // Если продукт уже есть в корзине, увеличиваем его количество
-    if (cart.hasOwnProperty(productName)) {
-        cart[productName] += 1;
+    // Обновляем словарь CART
+    if (CART.hasOwnProperty(name)) {
+        CART[name]++;
     } else {
-        // Иначе добавляем продукт в корзину
-        cart[productName] = 1;
+        CART[name] = 1;
     }
 }
 
 // Функция для уменьшения количества продукта
 function decreaseCount() {
-    // Получаем текущее количество из поля count
-    let countElement = document.querySelector('.spicy-indicators');
+    const foodCard = event.target.closest('.food-card');
+    if (!foodCard) return;
+
+    const name = foodCard.querySelector('.name').textContent.trim();
+    const countElement = foodCard.querySelector('.count');
     let count = parseInt(countElement.textContent);
 
-    // Если количество равно 0, ничего не делаем
-    if (count === 0) {
-        return;
-    }
+    if (count === 0) return;
 
-    // Уменьшаем количество на 1
-    count -= 1;
+    count--;
+
     countElement.textContent = count;
 
-    // Получаем название продукта
-    let productName = document.querySelector('.div13').textContent.trim();
-
-    // Если продукт есть в корзине, уменьшаем его количество
-    if (cart.hasOwnProperty(productName)) {
-        cart[productName] -= 1;
-        // Если количество стало равным 0, удаляем продукт из корзины
-        if (cart[productName] === 0) {
-            delete cart[productName];
+    // Обновляем словарь CART
+    if (CART.hasOwnProperty(name)) {
+        CART[name]--;
+        if (CART[name] === 0) {
+            delete CART[name];
         }
     }
 }
+
 
 // Поиск кнопок и добавление обработчиков событий
 // document.addEventListener('DOMContentLoaded', function() {
@@ -71,10 +68,10 @@ function openCartModal() {
     modalContent.innerHTML = '';
   
     // Добавление элементов корзины в модальное окно
-    for (let item in cart) {
-      if (cart.hasOwnProperty(item)) {
+    for (let item in CART) {
+      if (CART.hasOwnProperty(item)) {
         let cartItem = document.createElement('div');
-        cartItem.textContent = item + ': ' + cart[item];
+        cartItem.textContent = item + ': ' + CART[item];
         modalContent.appendChild(cartItem);
       }
     }
